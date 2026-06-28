@@ -134,3 +134,17 @@ bun run skill:check      # health dashboard for all skills
 - Safety skills (careful, freeze, guard) use inline advisory prose — always confirm before destructive operations.
 - State paths resolve via `bin/gstack-paths` (sourced via `eval "$(...)"`). Honors `GSTACK_HOME`, `CLAUDE_PLUGIN_DATA`, `CLAUDE_PLANS_DIR`.
 - The `claude` CLI binary resolves via `browse/src/claude-bin.ts` (`Bun.which()` + `GSTACK_CLAUDE_BIN` override). Set `GSTACK_CLAUDE_BIN=wsl` plus `GSTACK_CLAUDE_BIN_ARGS='["claude"]'` to run Claude through WSL on Windows.
+
+## Coding Tasks
+
+When spawning Claude Code sessions for coding work, tell the session to use
+gstack skills. Open each session prompt with "Load gstack." so it picks up the
+skill suite, then route to the right skill for the task.
+
+Examples:
+
+- **Security audit** — `Load gstack. Run /cso`
+- **Code review** — `Load gstack. Run /review`
+- **QA test a URL** — `Load gstack. Run /qa https://...`
+- **Build a feature end-to-end** — `Load gstack. Run /autoplan, implement the plan, then run /ship`
+- **Plan before building** — `Load gstack. Run /office-hours then /autoplan. Save the plan, don't implement.`
