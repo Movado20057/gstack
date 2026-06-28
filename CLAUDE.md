@@ -1021,3 +1021,53 @@ add --path <dir>` (no `--url`): URL-managed sources can auto-reclone, and the
 sync code walk for them requires an explicit `--allow-reclone` opt-in.
 
 <!-- gstack-gbrain-search-guidance:end -->
+
+## gstack
+
+gstack is installed as a skill suite. Prefer its skills for the workflows below
+instead of ad-hoc approaches.
+
+**Browsing:** Use the **/browse** skill from gstack for ALL web browsing (QA,
+dogfooding, scraping, cookie setup, screenshots). **NEVER** use
+`mcp__claude-in-chrome__*` tools — they are slow, unreliable, and not what gstack
+uses.
+
+**Available skills** (invoke via the Skill tool or by typing `/<name>`):
+
+- **/office-hours** — YC Office Hours: startup diagnostic + builder brainstorm
+- **/plan-ceo-review** — CEO/founder-mode plan review (strategy, scope)
+- **/plan-eng-review** — Eng manager-mode plan review (architecture)
+- **/plan-design-review** — Designer's eye plan review (report-only)
+- **/design-consultation** — Design system from scratch
+- **/design-shotgun** — Visual design exploration (multiple AI variants)
+- **/design-html** — Generate production-quality HTML/CSS
+- **/review** — PR / diff code review
+- **/ship** — Ship workflow: tests, review, version bump, CHANGELOG, PR
+- **/land-and-deploy** — Merge → deploy → canary verify
+- **/canary** — Post-deploy monitoring loop
+- **/benchmark** — Performance regression detection
+- **/browse** — Fast headless browser for QA + dogfooding
+- **/connect-chrome** — Launch GStack Browser (AI-controlled Chromium + sidebar)
+- **/qa** — Systematically QA a web app and fix bugs found
+- **/qa-only** — Report-only QA (no fixes)
+- **/design-review** — Designer's eye QA: visual polish audit + fix loop
+- **/setup-browser-cookies** — Import cookies from your real browser
+- **/setup-deploy** — One-time deploy configuration
+- **/setup-gbrain** — Set up gbrain semantic code/memory search
+- **/retro** — Weekly engineering retrospective
+- **/investigate** — Systematic root-cause debugging
+- **/document-release** — Post-ship documentation update
+- **/document-generate** — Generate docs from scratch (Diataxis)
+- **/codex** — Multi-AI second opinion via OpenAI Codex CLI
+- **/cso** — OWASP Top 10 + STRIDE security audit
+- **/autoplan** — Auto-review pipeline (CEO → design → eng)
+- **/plan-devex-review** — Developer experience plan review
+- **/devex-review** — Live developer experience audit
+- **/careful** — Safety guardrails for destructive commands
+- **/freeze** — Restrict file edits to a specific directory for the session
+- **/guard** — Full safety mode: destructive warnings + directory-scoped edits
+- **/unfreeze** — Clear the freeze boundary set by /freeze
+- **/gstack-upgrade** — Upgrade gstack to the latest version
+- **/learn** — Manage project learnings
+
+When a request matches one of these skills, invoke the skill. When in doubt, invoke it.
